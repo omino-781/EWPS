@@ -12,3 +12,6 @@
 !/storage/framework/views/.gitkeep
 /bootstrap/cache/*
 !/bootstrap/cache/.gitkeep
+vendor/ 
+php/ 
+php.zip 
