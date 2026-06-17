@@ -2,7 +2,7 @@
 @section('title', 'Login')
 @section('content')
 <h4 class="mb-3">Role-Based Login</h4>
-<form method="POST" action="{{ route('login') }}">
+<form method="POST" action="{{ secure_url(route('login', [], false)) }}">
     @csrf
     <div class="mb-3">
         <label class="form-label">Role</label>
