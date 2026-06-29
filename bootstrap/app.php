@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Middleware\CheckPermission;
 use App\Http\Middleware\EnsureRole;
 use App\Http\Middleware\LogActivity;
@@ -20,11 +19,9 @@ return Application::configure(basePath: dirname(__DIR__))
             'permission' => CheckPermission::class,
             'activity.log' => LogActivity::class,
         ]);
-
         $middleware->api(prepend: [
             \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
         ]);
-
         $middleware->validateCsrfTokens(except: [
             'api/*',
         ]);
@@ -32,5 +29,4 @@ return Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
-   })->withMiddleware(function (Middleware $middleware): void {
     })->create();
